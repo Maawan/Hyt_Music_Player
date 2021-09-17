@@ -1,4 +1,4 @@
-package com.hayatsoftwares.hyt.music.player;
+package com.hayatsoftwares.mybee.music.player;
 
 import org.junit.Test;
 
