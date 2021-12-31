@@ -3,7 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Maawan Ahmad/AndroidStudioProjects/HytMusicPlayer/app/src/main/res/drawable/ic_baseline_music_note_24.xml" value="0.2203125" />
+        <entry key="..\:/Users/Maawan Ahmad/AndroidStudioProjects/HytMusicPlayer/app/src/main/res/drawable/ic_baseline_pause_24.xml" value="0.2890625" />
+        <entry key="..\:/Users/Maawan Ahmad/AndroidStudioProjects/HytMusicPlayer/app/src/main/res/drawable/ic_baseline_play_arrow_24.xml" value="0.2890625" />
+        <entry key="..\:/Users/Maawan Ahmad/AndroidStudioProjects/HytMusicPlayer/app/src/main/res/drawable/play_pause_button_background.xml" value="0.2890625" />
+        <entry key="..\:/Users/Maawan Ahmad/AndroidStudioProjects/HytMusicPlayer/app/src/main/res/drawable/swipe.xml" value="0.2203125" />
+        <entry key="..\:/Users/Maawan Ahmad/AndroidStudioProjects/HytMusicPlayer/app/src/main/res/layout/activity_main.xml" value="0.2033514492753623" />
         <entry key="..\:/Users/Maawan Ahmad/AndroidStudioProjects/HytMusicPlayer/app/src/main/res/layout/activity_splash.xml" value="0.18" />
+        <entry key="..\:/Users/Maawan Ahmad/AndroidStudioProjects/HytMusicPlayer/app/src/main/res/layout/fragment_player.xml" value="0.15989583333333332" />
+        <entry key="..\:/Users/Maawan Ahmad/AndroidStudioProjects/HytMusicPlayer/app/src/main/res/layout/list_layout.xml" value="0.25" />
+        <entry key="..\:/Users/Maawan Ahmad/AndroidStudioProjects/HytMusicPlayer/app/src/main/res/layout/sheet_player.xml" value="0.5" />
       </map>
     </option>
   </component>

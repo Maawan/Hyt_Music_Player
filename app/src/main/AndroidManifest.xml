@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hayatsoftwares.mybee.music.player">
+    package="com.hayatsoftwares.hyt.music.player">
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HytMusicPlayer">
         <activity
-            android:name="com.hayatsoftwares.mybee.music.player.SplashActivity"
+            android:name="com.hayatsoftwares.hyt.music.player.SplashActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +21,7 @@
         </activity>
 
         <activity
-            android:name="com.hayatsoftwares.mybee.music.player.MainActivity"
+            android:name="com.hayatsoftwares.hyt.music.player.MainActivity"
             android:exported="true">
 
         </activity>

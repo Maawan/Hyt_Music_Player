@@ -1,4 +1,4 @@
-package com.hayatsoftwares.mybee.music.player;
+package com.hayatsoftwares.hyt.music.player;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +13,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.hayatsoftwares.mybee.music.player.Util.Constants;
+import com.hayatsoftwares.hyt.music.player.Util.Constants;
 
 import java.util.Objects;
 

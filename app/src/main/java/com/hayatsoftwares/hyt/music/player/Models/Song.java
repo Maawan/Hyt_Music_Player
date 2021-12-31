@@ -1,4 +1,4 @@
-package com.hayatsoftwares.mybee.music.player.Models;
+package com.hayatsoftwares.hyt.music.player.Models;
 
 public class Song {
     private String id;
