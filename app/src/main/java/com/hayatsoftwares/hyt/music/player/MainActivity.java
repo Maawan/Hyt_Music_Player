@@ -12,6 +12,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.Manifest;
 import android.app.Notification;
@@ -41,8 +42,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.tabs.TabLayout;
+import com.hayatsoftwares.hyt.music.player.Adapter.FragmentAdapter;
 import com.hayatsoftwares.hyt.music.player.Adapter.SongsAdapter;
 import com.hayatsoftwares.hyt.music.player.Interfaces.ClickEvent;
+import com.hayatsoftwares.hyt.music.player.Interfaces.Interactor2;
 import com.hayatsoftwares.hyt.music.player.Interfaces.MusicPlay;
 import com.hayatsoftwares.hyt.music.player.Models.Song;
 import com.hayatsoftwares.hyt.music.player.MusicService.MyService;
@@ -52,9 +56,10 @@ import com.hayatsoftwares.hyt.music.player.Util.Constants;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements ClickEvent , MusicPlay , ServiceConnection {
-    ArrayList<Song> currentSongs;
+public class MainActivity extends AppCompatActivity implements ClickEvent , MusicPlay , ServiceConnection , Interactor2 {
+    public static ArrayList<Song> currentSongs;
     private SeekBar seekBar;
+    private ViewPager viewPager;
     //private
     private MediaSessionCompat mediaSession;
     private Handler handler,mHandler;
@@ -97,6 +102,7 @@ public class MainActivity extends AppCompatActivity implements ClickEvent , Musi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ini();
+        getSupportActionBar().hide();
         currentSongs = new ArrayList<>();
         mediaSession = new MediaSessionCompat(this , "PlayAudio");
         handler = new Handler();
@@ -244,6 +250,14 @@ public class MainActivity extends AppCompatActivity implements ClickEvent , Musi
             }
         });
 
+        viewPager = findViewById(R.id.container);
+        FragmentAdapter fragmentAdapter = new FragmentAdapter(this , getSupportFragmentManager());
+        viewPager.setAdapter(fragmentAdapter);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_tablayout);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager));
+
+
     }
 
     @Override
@@ -382,6 +396,9 @@ public class MainActivity extends AppCompatActivity implements ClickEvent , Musi
         if (bitmap != null) {
             image.setImageBitmap(bitmap);
             imageSwipe.setImageBitmap(bitmap);
+        }else{
+            image.setImageResource(R.drawable.ic_baseline_music_note_24);
+            imageSwipe.setImageResource(R.drawable.ic_baseline_music_note_24);
         }
 
     }
@@ -467,5 +484,11 @@ public class MainActivity extends AppCompatActivity implements ClickEvent , Musi
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         notificationManager.notify(0 , notification);
 
+    }
+
+
+    @Override
+    public void itemClikedinFrag(ArrayList<Song> list, int pos) {
+        itemClickedOnMainList(list , pos);
     }
 }
