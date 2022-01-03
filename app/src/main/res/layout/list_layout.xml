@@ -17,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_centerVertical="true"
         android:layout_marginStart="10dp"
+        android:paddingRight="60dp"
         android:layout_toRightOf="@id/photo"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -24,9 +25,11 @@
             android:layout_width="wrap_content"
             android:id="@+id/songName"
             android:textSize="13sp"
+            android:maxLines="2"
             android:textColor="#757575"
             android:layout_marginBottom="4dp"
             android:textStyle="bold"
+            android:layout_marginRight="10dp"
             android:layout_height="wrap_content"
             tools:text = "SOng Name"/>
         <TextView
@@ -38,5 +41,26 @@
             android:textSize="9sp"
             tools:text="Song Descrition"/>
     </LinearLayout>
+    <ImageButton
+        android:layout_width="30dp"
+        android:id="@+id/menu_btn"
+        android:layout_height="30dp"
+        android:layout_marginRight="5dp"
+        android:background="?selectableItemBackground"
+        android:src="@drawable/ic_baseline_more_vert_24"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
+
+    <ImageView
+        android:layout_width="25dp"
+        android:id="@+id/heart_btn"
+
+        android:layout_height="25dp"
+        android:layout_marginRight="4dp"
+        android:background="?selectableItemBackground"
+        android:src="@drawable/heart_not_filled"
+        android:layout_toLeftOf="@+id/menu_btn"
+        android:layout_centerVertical="true"/>
+
 
 </RelativeLayout>

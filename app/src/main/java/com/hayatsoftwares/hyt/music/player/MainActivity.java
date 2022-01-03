@@ -281,6 +281,7 @@ public class MainActivity extends AppCompatActivity implements ClickEvent , Musi
         try{
             pos = position;
             playMusic(list.get(position));
+            showNotification(R.drawable.ic_baseline_play_arrow_24);
         }catch (Exception e){
             Toast.makeText(MainActivity.this, "Exception has been Occured"+e.getLocalizedMessage() + " " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
@@ -435,6 +436,7 @@ public class MainActivity extends AppCompatActivity implements ClickEvent , Musi
     public void onServiceConnected(ComponentName name, IBinder service) {
         MyService.MyBinder binder = (MyService.MyBinder) service;
         musicService = binder.getServices();
+        musicService.setCallBack(this);
         Log.e("D" , "Connected");
     }
 
@@ -449,9 +451,9 @@ public class MainActivity extends AppCompatActivity implements ClickEvent , Musi
         Intent prevIntent = new Intent(this , NotificationReceiver.class).setAction(ACTION_PREV);
         PendingIntent prevPendingIntnt = PendingIntent.getBroadcast(this , 0 , prevIntent , PendingIntent.FLAG_UPDATE_CURRENT);
         Intent playIntent = new Intent(this , NotificationReceiver.class).setAction(ACTION_PLAY);
-        PendingIntent playPendingIntnt = PendingIntent.getBroadcast(this , 0 , prevIntent , PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent playPendingIntnt = PendingIntent.getBroadcast(this , 0 , playIntent , PendingIntent.FLAG_UPDATE_CURRENT);
         Intent nextIntent = new Intent(this , NotificationReceiver.class).setAction(ACTION_NEXT);
-        PendingIntent nextPendingIntnt = PendingIntent.getBroadcast(this , 0 , prevIntent , PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent nextPendingIntnt = PendingIntent.getBroadcast(this , 0 , nextIntent , PendingIntent.FLAG_UPDATE_CURRENT);
         Bitmap pic = Constants.getSongBitmap(currentSongs.get(pos));
         Notification notification = new NotificationCompat.Builder(this , CHANNEL_ID_2)
                 .setLargeIcon(pic).setContentTitle(currentSongs.get(pos).getDisplayName()).setSmallIcon(R.drawable.dislike)

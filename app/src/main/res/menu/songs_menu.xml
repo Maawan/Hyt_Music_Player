@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="Play"
+        app:showAsAction="never"
+        android:icon="@drawable/play_icon"
+        android:id="@+id/playSongFromMenu"/>
+    <item
+        android:title="Play Next"
+        android:id="@+id/playNext"/>
+    <item
+        android:title="Add to Favroite"
+        android:id="@+id/addToFav"/>
+    <item
+        android:title="Info"
+        android:id="@+id/songInfo"/>
+</menu>
